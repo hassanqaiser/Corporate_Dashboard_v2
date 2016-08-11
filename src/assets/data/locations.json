@@ -1,0 +1,90 @@
+[
+  {
+    "title": "Cool Company",
+    "id": 1,
+    "latitude": 45.815011,
+    "longitude": 15.981919,
+    "employees": 24,
+    "name": "Zagreb"
+  },
+  {
+    "title": "Cool Company",
+    "id": 2,
+    "latitude": 45.554962,
+    "longitude": 18.695514,
+    "employees": 43,
+    "name": "Osijek"
+  },
+  {
+    "title": "Cool Company",
+    "id": 3,
+    "latitude": 44.786568,
+    "longitude": 20.448922,
+    "employees": 20,
+    "name": "Beograd"
+  },
+  {
+    "title": "Cool Company",
+    "id": 4,
+    "latitude": 43.856259,
+    "longitude": 18.413076,
+    "employees": 8,
+    "name": "Sarajevo"
+  },
+  {
+    "title": "Cool Company",
+    "id": 5,
+    "latitude": 41.997346,
+    "longitude": 21.427996,
+    "employees": 15,
+    "name": "Skoplje"
+  },
+  {
+    "title": "Cool Company",
+    "id": 6,
+    "latitude": 41.902783,
+    "longitude": 12.496366,
+    "employees": 38,
+    "name": "Rome"
+  },
+  {
+    "title": "Cool Company",
+    "id": 7,
+    "latitude": 46.056947,
+    "longitude": 14.505751,
+    "employees": 30,
+    "name": "Ljubljana"
+  },
+  {
+    "title": "Cool Company",
+    "id": 8,
+    "latitude": 52.520007,
+    "longitude": 13.404954,
+    "employees": 15,
+    "name": "Berlin"
+  },
+  {
+    "title": "Cool Company",
+    "id": 9,
+    "latitude": 48.208174,
+    "longitude": 16.373819,
+    "employees": 41,
+    "name": "Viena"
+  },
+  {
+    "title": "Cool Company",
+    "id": 10,
+    "latitude": 45.440847,
+    "longitude": 12.315515,
+    "employees": 21,
+    "name": "London"
+  },
+  {
+    "title": "Cool Company",
+    "id": 12,
+    "latitude": 48.856614,
+    "longitude": 2.352222,
+    "employees": 34,
+    "name": "Paris"
+  }
+]
