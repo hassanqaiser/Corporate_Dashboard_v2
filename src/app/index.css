@@ -56,6 +56,10 @@ md-toolbar.md-default-theme {
   background-color: black;
 }
 
+md-button {
+    color: white;
+}
+
 section.jumbotron {
   margin-bottom: 30px;
   padding: 1px 30px;

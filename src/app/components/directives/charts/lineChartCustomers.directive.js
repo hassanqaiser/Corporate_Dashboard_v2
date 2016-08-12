@@ -19,8 +19,7 @@
 
 
       dataService.getCustomersCSVData("assets/data/customers.csv").then(function(resp){
-        //id;firstName;createdOn
-        var chart = dc.lineChart(el[0]);
+        var chart = dc.lineChart(el[0], "2");
         var maxDate = resp.dimension.top(1)[0]["createdOn"];
         var minDate = resp.dimension.bottom(1)[0]["createdOn"];
         var monthFormat = d3.time.format("%b");
@@ -29,8 +28,8 @@
 
 
         chart
-          .width($window.innerWidth/2.3)
-          .height(300)
+          .width($window.innerWidth)
+          .height(400)
           .transitionDuration(750)
           .margins({top: 10, right: 50, bottom: 30, left: 50})
           .x(d3.time.scale().domain([minDate, maxDate]))
@@ -65,14 +64,14 @@
 
         angular.element($window).bind('resize', function () {
           if($window.innerWidth > 900){
-            chart.width($window.innerWidth/2.3)
+            chart.width($window.innerWidth)
                  .transitionDuration(0);
           } else {
             chart.width($window.innerWidth)
                  .transitionDuration(0);
           }
 
-          dc.renderAll();
+          dc.renderAll("2");
           chart.transitionDuration(750);
         });
 

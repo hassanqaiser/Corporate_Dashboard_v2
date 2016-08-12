@@ -1,36 +1,17 @@
 <div layout="column" layout-gt-sm="row">
 
-  <md-content layout="column" flex>
+  <md-content layout="column" flex class="layout-column">
 
     <header>
-      <acme-navbar creation-date="main.creationDate"></acme-navbar>
+      <acme-navbar></acme-navbar>
     </header>
 
-    <div layout="row" layout-sm="column" layout-align="center center">
-      <div flex="100">
-        <div id="mapid" style="height:250px; border: 2px solid #dbdbdb;"></div>
-      </div>
+    <div layout="row" flex class="flex-90">
+
+        <div id="mapid" flex layout="column" style="height:600px;border: 2px solid #dbdbdb;"></div>
+
     </div>
 
-    <div layout="row" layout-sm="column" layout-align="center center">
-      <div layout="column" layout-gt-sm="row" layout-align="center center" >
-        <div flex-gt-sm="50" flex-gt-md="33">
-          <md-card>
-            <md-card-content>
-              <bar-Chart-Issues id="barChartIssues" height="200"></bar-Chart-Issues>
-            </md-card-content>
-          </md-card>
-        </div>
-
-        <div flex-gt-sm="50" flex-gt-md="33">
-          <md-card>
-            <md-card-content>
-              <line-Chart-Customers height="200"></line-Chart-Customers>
-            </md-card-content>
-          </md-card>
-        </div>
-      </div>
-    </div>
   </md-content>
 
 </div>

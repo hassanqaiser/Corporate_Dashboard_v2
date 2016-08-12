@@ -9,19 +9,45 @@
   function dataGridController($timeout, Auth, dataService) {
     var vm = this;
 
-    dataService.getIssuesDataforGrid().then(function(resp){
+    vm.gridOptions = {};
 
-      vm.myData = resp;
+    vm.gridOptions.enableFiltering = true;
+    vm.gridOptions.columnDefs = [
+      { name:'id', width:50 },
+      { name:'createdOn', width:110, pinnedLeft:true },
+      { name:'customerName', width:150, pinnedRight:true  },
+      { name:'customerEmail', width:200  },
+      { name:'description', width:150 },
+      { name:'open', width:80 },
+      { name:'closedOn', width:110 },
+      { name:'employeeName', width:110 }
+    ];
 
+    dataService.getIssues().then(function(resp){
+      var csvData = [];
+      resp.dimension.top(Infinity).forEach(angular.bind(vm, function (d) {
+        csvData.push({
+          id:+d.id,
+          createdOn:d.createdOn.toString().substring(0,11),
+          customerName:d.customerName,
+          customerEmail:d.customerEmail,
+          description:d.description,
+          open:d.open,
+          closedOn:d.closedOn.toString().substring(0,11),
+          employeeName:d.employeeName
+        });
+
+        vm.gridOptions.data = csvData;
+
+      }));
     });
-    
+
     setInterval(function() {
 
-      dataService.getIssuesDataforGrid().then(function(resp){
+      dataService.updateIssuesBarChart().then(angular.bind(vm, function(d){
+        vm.gridOptions.data = d;
+      }));
 
-        vm.myData = resp;
-
-      });
 
     }, 1000 * 60);
 

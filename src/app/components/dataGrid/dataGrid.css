@@ -1,5 +1,6 @@
 .grid {
-  min-height: 500px;
+  width: 500px;
+  height: 600px;
 }
 
 .header-filtered {

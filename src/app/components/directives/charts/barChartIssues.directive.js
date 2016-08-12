@@ -26,8 +26,8 @@
         var yearFormat = d3.time.format("%y");
 
         chart
-          .width($window.innerWidth/2.3)
-          .height(300)
+          .width($window.innerWidth)
+          .height(400)
           .transitionDuration(750)
           .margins({top: 10, right: 50, bottom: 30, left: 50})
           .x(d3.time.scale().domain([minDate, maxDate]))
@@ -73,7 +73,7 @@
 
         angular.element($window).bind('resize', function () {
           if($window.innerWidth > 900){
-            chart.width($window.innerWidth/2.3)
+            chart.width($window.innerWidth)
                  .transitionDuration(0);
           } else {
             chart.width($window.innerWidth)

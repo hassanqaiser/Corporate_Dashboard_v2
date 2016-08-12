@@ -14,6 +14,12 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+      .state('keyMetrics', {
+        url: '/keyMetrics',
+        templateUrl:'app/components/keyMetrics/keyMetrics.html',
+        controller: 'keyMetricsController',
+        controllerAs: 'vm'
+      })
       .state('data', {
         url: '/data',
         templateUrl:'app/components/dataGrid/dataGrid.html',

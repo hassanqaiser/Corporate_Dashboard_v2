@@ -23,7 +23,7 @@
     /** @ngInject */
     function NavbarController() {
       var vm = this;
-
+      vm.currentNavItem = 'home';
     }
   }
 
