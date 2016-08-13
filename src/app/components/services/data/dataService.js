@@ -187,11 +187,10 @@ angular.module('p4')
             });
           });
 
-          if(!this.ndxCustCSVData)
-            this.ndxCustCSVData = crossfilter(dimData);
+          this.ndxCustCSVData = crossfilter(dimData);
 
           dimension  = this.ndxCustCSVData.dimension(function(d){
-            return d3.time.month(d.createdOn);
+            return d3.time.year(d.createdOn);
           });
 
           groupBy = dimension.group();
@@ -209,12 +208,20 @@ angular.module('p4')
         var deferred = $q.defer();
         getDataFactory.clearCache();
 
-        getDataFactory.get(url).then(angular.bind(this, function(data) {
+        getDataFactory.get(url).then(angular.bind(this, function(resp) {
+          var dimData = [];
+
+          resp.data.forEach(function(d) {
+            dimData.push({
+              id:+d.id,
+              createdOn:new Date(d.createdOn),
+              firstName:d.firstName
+            });
+          });
 
           if(this.ndxCustCSVData)
-            this.ndxCustCSVData.add(data);
+            this.ndxCustCSVData.add(dimData);
 
-          dc.redrawAll("2");
           deferred.resolve();
 
         }));

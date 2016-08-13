@@ -34,12 +34,13 @@
 
     var addNewCustomer = $interval(function() {
 
-      dataService.getUpdatedCustomersCSVData("assets/data/customers.csv").then(function(resp){
+      dataService.getUpdatedCustomersCSVData("assets/data/customers2.csv").then(function(resp){
+        dc.redrawAll("2");
         console.log('New Customers Added');
       });
 
 
-    }, 1000 * 120);
+    }, 1000 * 20);
 
     var dereg = $scope.$on('$locationChangeSuccess', function() {
       if($location.$$url !== "/keyMetrics"){

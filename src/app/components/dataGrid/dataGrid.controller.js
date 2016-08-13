@@ -6,7 +6,7 @@
     .controller('dataGridController', dataGridController);
 
   /** @ngInject */
-  function dataGridController($timeout, Auth, dataService) {
+  function dataGridController($timeout, $scope, $interval, $location, Auth, dataService) {
     var vm = this;
 
     vm.gridOptions = {};
@@ -42,7 +42,7 @@
       }));
     });
 
-    setInterval(function() {
+    var updateIssuesDataGrid = $interval(function() {
 
       dataService.updateIssuesBarChart().then(angular.bind(vm, function(d){
         vm.gridOptions.data = d;
@@ -50,6 +50,14 @@
 
 
     }, 1000 * 60);
+
+    var dereg = $scope.$on('$locationChangeSuccess', function() {
+      if($location.$$url !== "/data"){
+        $interval.cancel(updateIssuesDataGrid);
+
+      }
+      dereg();
+    });
 
   }
 })();
